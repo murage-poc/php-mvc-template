@@ -7,7 +7,7 @@ Some of the feature include:
 * Controllers,models, and views organised in a single directory structure respectively.
 * And many more features for easy intergration with all of your needs 
 ### How to quick setup
-* Ensure you have [composer](www.composer.org) installed 
+* Ensure you have [composer](www.getcomposer.org) installed 
 * In the root folder, run composer install
 * Now your template is ready. You can run in any PHP supported development server.
 
