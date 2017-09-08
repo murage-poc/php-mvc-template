@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Handle Front Controller...
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteCond %{REQUEST_FILENAME} !-f
+     RewriteRule ^ public/index.php [L]
+
+#Prevent viewing of .htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+#Prevent directory listings
+Options -Indexes

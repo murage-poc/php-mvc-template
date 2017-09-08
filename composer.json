@@ -1,0 +1,21 @@
+{
+  "name": "mimidots/ezzy",
+  "description": "full mimidots website",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Martin Murage",
+      "email": "info@mimidots.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.4",
+    "nesbot/carbon": "~1.20"
+  },
+  "autoload": {
+    "classmap":[
+      "./"
+    ]
+  }
+}
