@@ -39,7 +39,7 @@ class Router {
 	
 	public static function direct( $uri,$requestType ) {
 
-		if(array_key_exists($uri,self::$routes[$requestType])){
+		if(array_key_exists(trim($uri,'/'),self::$routes[$requestType])){
 			
 			return static::mapController(
 				...explode('@',
