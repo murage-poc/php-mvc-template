@@ -52,7 +52,7 @@ class Router {
 	}
 	
 	
-	protected function mapController($controller,$action){
+	protected static function mapController($controller,$action){
 		
 		$controller=new $controller; //renew the controller class
 		
