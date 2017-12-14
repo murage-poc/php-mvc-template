@@ -37,6 +37,16 @@ function view( $name ,$data=[]) {
 }
 
 
+/**
+ * Provide and easy method to load environment variables
+ * This function requires vlucas phpdotenv module <code>https://github.com/vlucas/phpdotenv </code>
+ *
+ * @param $key :the key (string) of the value one want to get
+ *
+ * @return mixed
+ *
+ * @throws Exception :if the key is not found
+ */
 function env($key){
 	
 	if(!is_string($key)){
