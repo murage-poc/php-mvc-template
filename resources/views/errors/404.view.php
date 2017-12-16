@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="404 Not Found Error">
-    <meta name="author" content="customerservice@mimidots.com"/>
+    <meta name="author" content=<?php echo env("APP_AUTHOR") ?>/>
     <meta name="ROBOTS" content="NOSNIPPET"/>
-    <title>404 Error page</title>
+    <title><?php echo env("APP_NAME") ?>404 Error page</title>
     <!--    Core Bootrsap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -30,7 +30,7 @@
             padding: 10px 0;
         }
         /* Everything but the jumbotron gets side spacing for mobile-first views */
-        .masthead, .body-content, {
+        .body-content, {
             padding-left: 15px;
             padding-right: 15px;
         }
@@ -39,23 +39,17 @@
             text-align: center;
             background-color: transparent;
         }
-        .jumbotron .btn {
+        .jumbotron {
             font-size: 21px;
             padding: 14px 24px;
         }
         /* Colors */
         .green {color:#5cb85c;}
-        .orange {color:#f0ad4e;}
         .red {color:#d9534f;}
     </style>
-    <script type="text/javascript">
-        function loadDomain() {
-            var display = document.getElementById("display-domain");
-            display.innerHTML = document.domain;
-        }
-    </script>
+  
 </head>
-<body onload="loadDomain();">
+<body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -74,7 +68,11 @@
     <div class="jumbotron">
         <h1><i class="fa fa-frown-o red"></i> 404 Not Found</h1>
         <p class="lead">We couldn't find what you're looking for</p>
-        <p><a  href="/index.php" class="btn btn-default btn-lg"><span class="green">Take Me To The Homepage</span></a>
+        <p>
+            <a  href="<?php echo env("APP_URL") ?>"
+                 class="btn btn-default btn-lg">
+            <span class="green">Take Me To The Homepage</span>
+            </a>
 
         </p>
     </div>
