@@ -13,13 +13,11 @@ require_once 'partials/header.php';
 
 ?>
 
-<h3 class="welcome">Welcome to   <?php echo env("APP_NAME")?> </h3>
+<h3 class="welcome">Hello   <?php echo env("APP_NAME")?> </h3>
+Hope you will be able to build awesome apps
 
 
 <?php
- dd(Carbon::now()->diffForHumans());
-
-
 require_once 'partials/footer.php';
 
 
