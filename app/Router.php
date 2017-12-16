@@ -47,8 +47,7 @@ class Router {
 				));
 			
 		}
-		
-		throw new Exception("no uri defined for given route");
+		return view("errors/404");
 	}
 	
 	
@@ -58,7 +57,7 @@ class Router {
 		
 		if(!method_exists($controller,$action)){
 			//throw an error
-			throw new Exception("{$controller} has no defined {$action}");
+			return view("errors/404");
 		}
 		
 		return $controller->$action();
