@@ -16,9 +16,7 @@ Hope you will be able to build awesome apps
 
 
 <?php
-require_once 'partials/footer.php';
-
-
+Footer::doFooter();
 ?>
 
 
