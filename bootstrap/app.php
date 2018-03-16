@@ -1,4 +1,6 @@
 <?php
+use Dotenv\Dotenv;
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -20,8 +22,8 @@ require_once 'vendor/autoload.php';
  */
 function dd( $data = [] ) {
 	echo '<pre>';
-	die( var_dump( $data ) );
-	echo '</pre>';
+	die( var_dump( $data ).'</pre>' );
+
 }
 
 
@@ -60,4 +62,22 @@ function env($key){
 	throw new Exception("no defined environment variable for {$key}");
 }
 
+
+class Env {
+
+
+    public static function getEnv() {
+        $c = new Dotenv( './' );
+
+        $envVariables=[];
+
+        foreach ( $c->load() as $var ) {
+            $config=explode('=',$var);
+
+            $envVariables[$config[0]]=$config[1];
+        }
+        return $envVariables;
+
+    }
+}
 ?>
