@@ -22,12 +22,12 @@ class Router {
 	 */
 	public static function get( $uri, $controller ) {
 		
-		return self::$routes["GET"][ $uri ] = $controller;
+		return self::$routes["GET"][ trim($uri,'/') ] = $controller;
 	}
 	
 	public static function post( $uri, $controller ) {
 		
-		return self::$routes["POST"][ $uri ] = $controller;
+		return self::$routes["POST"][ trim($uri,'/') ] = $controller;
 	}
 	
 	public static function load( $file ) {
@@ -57,7 +57,7 @@ class Router {
 		
 		if(!method_exists($controller,$action)){
 			//throw an error
-			return view("errors/404");
+			return view("errors/500");
 		}
 		
 		return $controller->$action();
