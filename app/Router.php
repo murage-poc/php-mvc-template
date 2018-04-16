@@ -47,6 +47,7 @@ class Router {
 				));
 			
 		}
+		//return an error general page
 		return view("errors/404");
 	}
 	
@@ -56,7 +57,7 @@ class Router {
 		$controller=new $controller; //renew the controller class
 		
 		if(!method_exists($controller,$action)){
-			//throw an error
+			//return an error page
 			return view("errors/500");
 		}
 		
