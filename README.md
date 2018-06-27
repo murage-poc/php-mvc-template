@@ -6,13 +6,16 @@ Some of the feature include:
 * Dependencies managed through composer
 * Controllers,models, and views organised in a single directory structure respectively.
 * And many more features for easy integration with all of your needs 
-### How to quick setup
+### How to quickly setup
 * Ensure you have [composer](www.getcomposer.org) installed (Adding library using composer help you get rid of adding each required class manually. 
-                                                             	You just need to include the autoload file and create the instance of the class(es) you may need. 
-                                                             	Autoload will take care of adding classes) 
-* Download the project in zip format [here](https://codeload.github.com/mimidotsuser/mvc-template/zip/master) and extract it to your http server.                                                          	
+                                                             ) 
+    * You can use composer to create the project using `composer create-project murage/mvc` 
+    * or download the project in zip format [here](https://codeload.github.com/mimidotsuser/mvc-template/zip/mvc) and extract it to your http server.                                                          	
 * In the root folder, run composer install
-* Now your template is ready. Feel free to rename the folder to suit your project name. Incase you need to use a database, change the provided dummy database properties in the .env file in the root folder.
+* Rename example.env file in the root folder to .env and  modify the values as appropriate
+* Now your template is ready. Feel free to rename the folder to suit your project name.
 
-Contributions on ways to improve are welcomed. Please feel free to fork, download or open any issues.
-Inspired with ❤️ by **[Laravel Framework](www.laravel.com)** 
+    NB: The project uses [sqlBuilder](https://github.com/mimidotsuser/sqlQueryuilder) for database transactions interaction
+
+Contributions on ways to improve the project are welcomed. Please feel free to fork, download or open any issues.
+Inspired with ❤ by **[Laravel Framework](www.laravel.com)** 
