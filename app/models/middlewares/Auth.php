@@ -2,13 +2,17 @@
 
 /**
  * All rights reserved.
- * User: Dread Pirate Roberts
+ * User: mimidots
  * Date: 28-Aug-17
  * Time: 21:10
  */
 
-use Model\Model;
 
-class Auth extends  Model {
+class Auth  {
+
+    public static function middleware(array $users)
+    {
+
+    }
 	
 }

@@ -1,17 +1,17 @@
 {
-  "name": "mimidots/ezzy",
-  "description": "full mimidots website",
+  "name": "murage/mvc",
+  "description": "A simple model-view -controller PHP project template ",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "Martin Murage",
+      "name": "Murage M.",
       "email": "hello@mimidots.com"
     }
   ],
   "require": {
     "php": ">=5.6.4",
-    "vlucas/phpdotenv": "~2.2",
+    "vlucas/phpdotenv": "^2.4",
     "murage/sqlddl":"~1.0.0",
     "twig/twig": "^2.4"
   },

@@ -1,0 +1,35 @@
+{% extends "partials/template.twig" %}
+
+
+{% block header_content %}
+    <meta name="description" content="Site under maintenance">
+    <meta name="author" content="{{ author }}">
+    <meta name="ROBOTS" content="NOSNIPPET"/>
+    <title>{{ appname }} SITE DOWN</title>
+{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+    <style>
+        .center{
+            margin-top: 20%;
+        }
+    </style>
+{% endblock %}
+
+
+{% block navigation %}
+
+{% endblock %}
+
+    {% block content %}
+        <div class="container  center">
+            <div class="body-content">
+                <div class="text-center">
+                    <h1><i class="fa fa-frown-o  red"></i> SITE UNDER MAINTENANCE</h1>
+                    <p class="lead">Seems like site is down. Please check with us later</p>
+                    <p><br></p>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
