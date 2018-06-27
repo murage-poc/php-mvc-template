@@ -2,19 +2,16 @@
 
 /**
  * All rights reserved.
- * User: Dread Pirate Roberts
+ * User: mimidots
  * Date: 06-Aug-17
  * Time: 16:50
  */
 
 
-use Controller\Controller;
-
-
-class HomeController extends Controller{
+class HomeController{
 	
 	public static function index(){
-		return view('home');
+		 view('home');
 	}
 	
 }

@@ -21,8 +21,8 @@ require_once 'vendor/autoload.php';
  * @param $data
  */
 function dd( $data = [] ) {
-	echo '<pre>';
-	die( var_dump( $data ).'</pre>' );
+    echo '<pre>';
+    die( var_dump( $data ).'</pre>' );
 
 }
 
@@ -32,11 +32,18 @@ function dd( $data = [] ) {
  * @param array $data :optional data to be passed to the view
  */
 function view( $name ,$data=[]) {
-	extract($data);
-	
-	return require "resources/views/{$name}.view.php";
-	
+
+    //add any global data
+    $data['app_author']=AppGlobalsModel::author();
+    $data['appname']=AppGlobalsModel::appname();
+    $data['baseUrl']=AppGlobalsModel::baseurl();
+
+
+    /*twig rendering now comes into play*/
+    TwigApp::render($name.'.twig',$data);
+
 }
+
 
 
 /**
@@ -50,16 +57,16 @@ function view( $name ,$data=[]) {
  * @throws Exception :if the key is not found
  */
 function env($key){
-	
-	if(!is_string($key)){
-		
-		throw new Exception("Invalid key provided {$key}");
-	}
-	
-	if(array_key_exists($key,Env::getEnv())){
-		return Env::getEnv()[$key];
-	}
-	throw new Exception("no defined environment variable for {$key}");
+
+    if(!is_string($key)){
+
+        throw new Exception("Invalid key provided {$key}");
+    }
+
+    if(array_key_exists($key,Env::getEnv())){
+        return Env::getEnv()[$key];
+    }
+    throw new Exception("no defined environment variable for {$key}");
 }
 
 
@@ -68,7 +75,6 @@ class Env {
 
     public static function getEnv() {
         $c = new Dotenv( './' );
-
         $envVariables=[];
 
         foreach ( $c->load() as $var ) {

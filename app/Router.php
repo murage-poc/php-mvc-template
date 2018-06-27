@@ -47,17 +47,26 @@ class Router {
 				));
 			
 		}
-		return view("errors/404");
+		//return an error general page
+		 view("errors/404");
+		return 1;
 	}
-	
-	
-	protected static function mapController($controller,$action){
+
+
+    /**
+     * @param $controller
+     * @param $action
+     * @return mixed
+     */
+    protected static function mapController($controller, $action){
 		
 		$controller=new $controller; //renew the controller class
 		
+
 		if(!method_exists($controller,$action)){
-			//throw an error
-			return view("errors/500");
+			//return an error page
+			 view("errors/500");
+			 return 1;
 		}
 		
 		return $controller->$action();
