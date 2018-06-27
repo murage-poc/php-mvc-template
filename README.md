@@ -10,7 +10,7 @@ Some of the feature include:
 * Ensure you have [composer](www.getcomposer.org) installed (Adding library using composer help you get rid of adding each required class manually. 
                                                              	You just need to include the autoload file and create the instance of the class(es) you may need. 
                                                              	Autoload will take care of adding classes) 
-* Download the project in zip format [here](https://codeload.github.com/mimidotsuser/mvc-template/zip/master) and extract it to your http server.                                                          	
+* Download the project in zip format [here](https://codeload.github.com/mimidotsuser/mvc-template/zip/withtwig) and extract it to your http server.                                                          	
 * In the root folder, run composer install
 * Now your template is ready. Feel free to rename the folder to suit your project name. Incase you need to use a database, change the provided dummy database properties in the .env file in the root folder.
 
