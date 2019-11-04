@@ -1,7 +1,8 @@
 {
   "name": "murage/mvc",
-  "description": "A simple model-view -controller PHP project template ",
+  "description": "A simple MVC PHP project template ",
   "type": "project",
+  "version": "0.1.1",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -12,13 +13,15 @@
   ],
   "require": {
     "php": ">=5.6.4",
-    "vlucas/phpdotenv": "^2.4",
-    "murage/sqlddl":"~1.0.0",
-    "twig/twig": "^2.4"
+    "twig/twig": "^2.11.3",
+    "ext-json": "*"
   },
   "autoload": {
-    "classmap":[
-      "./"
-    ]
+    "psr-4": {
+      "Services\\": "app/services",
+      "Middleware\\":"app/middlewares",
+      "Models\\":"app/models",
+      "":["bootstrap/"]
+    }
   }
 }

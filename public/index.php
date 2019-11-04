@@ -10,5 +10,6 @@
 require_once 'bootstrap/app.php';
 
 
-Router::load("routes/web.php")
+Router::load(['routes/web.php','routes/api.php'])
              ::direct(Request::uri(),Request::method());
+

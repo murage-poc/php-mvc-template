@@ -7,6 +7,7 @@
  * Time: 21:10
  */
 
+namespace Middleware;
 
 class Auth  {
 

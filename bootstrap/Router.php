@@ -10,7 +10,11 @@ class Router {
 	
 	public static $routes = [
 		'GET'  => [],
-		"POST" => []
+		"POST" => [],
+		"DELETE" => [],
+		"PATCH" => [],
+		"OPTIONS" => [],
+		"PUT" => []
 	];
 	
 	
@@ -29,15 +33,38 @@ class Router {
 		
 		return self::$routes["POST"][ trim($uri,'/') ] = $controller;
 	}
-	
-	public static function load( $file ) {
-		$instance = new static();
-		
-		require $file;
+
+    public static function delete( $uri, $controller ) {
+
+        return self::$routes["DELETE"][ trim($uri,'/') ] = $controller;
+    }
+
+    public static function patch( $uri, $controller ) {
+
+        return self::$routes["PATCH"][ trim($uri,'/') ] = $controller;
+    }
+
+    /**
+     * @param array $files
+     * @return Router
+     */
+    public static function load($files=[] ) {
+	    $instance = new static();
+
+        foreach ($files as $file) {
+         require_once $file;
+		}
 		return $instance;
 	}
 	
 	public static function direct( $uri,$requestType ) {
+
+	    if(!isset(self::$routes[$requestType])){
+	        http_response_code(503);
+            header('Content-type:application/json');
+            echo json_encode(['status'=>'error','message'=>'Bad Request. Unknown request method '.$requestType,
+                'code'=>503]);
+            return 1;        }
 
 		if(array_key_exists(trim($uri,'/'),self::$routes[$requestType])){
 			
