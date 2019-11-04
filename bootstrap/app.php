@@ -1,5 +1,4 @@
 <?php
-use Dotenv\Dotenv;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +13,40 @@ use Dotenv\Dotenv;
 */
 require_once 'vendor/autoload.php';
 
+/**
+ *
+ * Initialize the twig library
+ */
+function render($view,$data){
+    $loader=new \Twig\Loader\FilesystemLoader('resources/views/');
+
+    if(!$loader->exists($view)){ $view='errors/500.twig';}
+
+    $twig = new \Twig\Environment($loader, []);
+    try {
+        echo $twig->render($view, $data);
+    } catch (\Twig\Error\LoaderError $e) {
+        var_dump($e);
+    } catch (\Twig\Error\RuntimeError $e) {
+        var_dump($e);
+
+    } catch (\Twig\Error\SyntaxError $e) {
+        var_dump($e);
+
+    }
+}
+
+/**
+ * @param $name :the name of the view
+ * @param array $data :optional data to be passed to the view
+ */
+function view( $name ,$data=[]) {
+
+    /*twig rendering now comes into play*/
+    render($name.'.twig',$data);
+
+}
+
 
 /*
  * Die and Dump
@@ -27,63 +60,4 @@ function dd( $data = [] ) {
 }
 
 
-/**
- * @param $name :the name of the view
- * @param array $data :optional data to be passed to the view
- */
-function view( $name ,$data=[]) {
-
-    //add any global data
-    $data['app_author']=AppGlobalsModel::author();
-    $data['appname']=AppGlobalsModel::appname();
-    $data['baseUrl']=AppGlobalsModel::baseurl();
-
-
-    /*twig rendering now comes into play*/
-    TwigApp::render($name.'.twig',$data);
-
-}
-
-
-
-/**
- * Provide and easy method to load environment variables
- * This function requires vlucas phpdotenv module <code>https://github.com/vlucas/phpdotenv </code>
- *
- * @param $key :the key (string) of the value one want to get
- *
- * @return mixed
- *
- * @throws Exception :if the key is not found
- */
-function env($key){
-
-    if(!is_string($key)){
-
-        throw new Exception("Invalid key provided {$key}");
-    }
-
-    if(array_key_exists($key,Env::getEnv())){
-        return Env::getEnv()[$key];
-    }
-    throw new Exception("no defined environment variable for {$key}");
-}
-
-
-class Env {
-
-
-    public static function getEnv() {
-        $c = new Dotenv( './' );
-        $envVariables=[];
-
-        foreach ( $c->load() as $var ) {
-            $config=explode('=',$var);
-
-            $envVariables[$config[0]]=$config[1];
-        }
-        return $envVariables;
-
-    }
-}
 ?>
