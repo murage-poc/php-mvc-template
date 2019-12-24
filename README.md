@@ -9,7 +9,7 @@ Some of the feature include:
 ### How to quickly setup
 * Ensure you have [composer](www.getcomposer.org) installed (Adding library using composer help you get rid of adding each required class manually. 
                                                              ) 
-    * You can use composer to create the project using `composer create-project murage/mvc` 
+    * You can use composer to create the project using `composer create-project murage/mvc demo` (replace `demo` with your project name)
     * or download the project in zip format [here](https://codeload.github.com/mimidotsuser/mvc-template/zip/mvc) and extract it to your http server.                                                          	
 * In the root folder, run composer install
 * Rename example.env file in the root folder to .env and  modify the values as appropriate
@@ -18,4 +18,8 @@ Some of the feature include:
     NB: The project uses [sqlBuilder](https://github.com/mimidotsuser/sqlQueryuilder) for database transactions interaction
 
 Contributions on ways to improve the project are welcomed. Please feel free to fork, download or open any issues.
+
+### License
+[MIT License](LICENSE.md). 
+
 Inspired with ❤ by **[Laravel Framework](www.laravel.com)** 
