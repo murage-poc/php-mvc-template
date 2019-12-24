@@ -6,9 +6,9 @@
  * Time: 9:04 PM
  */
 
-namespace Models;
+namespace App\Models;
 
-class BaseModel
+class Model
 {
 
 }

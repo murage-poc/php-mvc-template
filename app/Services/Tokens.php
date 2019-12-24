@@ -6,7 +6,7 @@
  * Time: 10:28 PM
  */
 
-namespace Services;
+namespace App\Services;
 
 
 class Tokens

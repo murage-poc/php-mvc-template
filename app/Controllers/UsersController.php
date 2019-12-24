@@ -5,6 +5,7 @@
  * Date: 7/7/2019
  * Time: 1:55 PM
  */
+namespace App\Controllers;
 
 class UsersController
 {

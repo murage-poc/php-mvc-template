@@ -2,7 +2,7 @@
   "name": "murage/mvc",
   "description": "A simple MVC PHP project template ",
   "type": "project",
-  "version": "0.1.1",
+  "version": "2.0.0",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -18,9 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Services\\": "app/services",
-      "Middleware\\":"app/middlewares",
-      "Models\\":"app/models",
+      "App\\": "app/",    
       "":["bootstrap/"]
     }
   }

@@ -6,6 +6,7 @@
  * Date: 06-Aug-17
  * Time: 16:50
  */
+namespace App\Controllers;
 
 class StaticPagesController{
 	

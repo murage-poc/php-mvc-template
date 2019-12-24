@@ -1,5 +1,4 @@
 <?php
-
 /**
  * All rights reserved.
  * User: Dread Pirate Roberts
@@ -7,7 +6,8 @@
  * Time: 16:39
  */
 class Router {
-	
+	private static $controllerNamespace='App\\Controllers\\';
+
 	public static $routes = [
 		'GET'  => [],
 		"POST" => [],
@@ -86,7 +86,8 @@ class Router {
      * @return mixed
      */
     protected static function mapController($controller, $action){
-		
+		$controller=(self::$controllerNamespace.$controller);
+
 		$controller=new $controller; //renew the controller class
 		
 

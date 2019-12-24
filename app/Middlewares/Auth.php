@@ -7,7 +7,7 @@
  * Time: 21:10
  */
 
-namespace Middleware;
+namespace App\Middleware;
 
 class Auth  {
 
